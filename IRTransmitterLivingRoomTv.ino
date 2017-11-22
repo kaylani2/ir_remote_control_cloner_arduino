@@ -338,6 +338,7 @@ void loop()
     delay (1002);
   }
 
+//Uncoment the block below in order to use the receiver circuit and get the values from the controller you`re trying to clone
 /*
   //Continue looping until you get a complete signal received
   if (myReceiver.getResults ())
