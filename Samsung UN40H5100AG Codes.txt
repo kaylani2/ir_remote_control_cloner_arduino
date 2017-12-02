@@ -1,0 +1,60 @@
+Manufacturer: Samsung
+Model: UN40H5100AG
+Protocol: NECX (7)
+Number of bits: 32
+
+On Button:					0xE0E040BF
+
+Source/Input Button:		0xE0E0807F
+
++Volume:					0xE0E0E01F
+-Volume:					0xE0E0D02F
+
+Mute Button:				0xE0E0F00F
+
++Channel:					0xE0E048B7
+-Channel:					0xE0E008F7
+
+Channel 1:					0xE0E020DF
+Channel 2:					0xE0E0A05F
+Channel 3:					0xE0E0609F
+Channel 4:					0xE0E010EF
+Channel 5:					0xE0E0906F
+Channel 6:					0xE0E050AF
+Channel 7:					0xE0E030CF
+Channel 8:					0xE0E0B04F
+Channel 9:					0xE0E0708F
+Channel 0:					0xE0E08877
+
+Return/Back:				0xE0E01AE5
+Exit:						0xE0E0B44B
+
+Up Arrow:					0xE0E006F9
+Down Arrow:					0xE0E08679
+Left Arrow:					0xE0E0A659
+Right Arrow:				0xE0E046B9
+
+Enter Button:				0xE0E016E9
+
+Previous Channel:			0xE0E0C837
+
+
+Enter Button:
+
+	Decoded NECx(7): Value:E0E016E9 Adrs:0 (32 bits) 
+	Raw samples(68): Gap:11646
+	  Head: m4662  s4374
+	0:m658 s1586	1:m610 s1634		 2:m598 s1650	3:m578 s554		 
+	4:m554 s566	5:m538 s586		 6:m522 s598	7:m510 s610		 
+	8:m510 s1730	9:m506 s1734		 10:m510 s1734	11:m498 s622		 
+	12:m502 s618	13:m502 s618		 14:m510 s610	15:m506 s614		 
+
+	16:m506 s614	17:m506 s614		 18:m510 s610	19:m514 s1726		 
+	20:m514 s606	21:m510 s1734		 22:m506 s1734	23:m506 s614		 
+	24:m510 s1730	25:m506 s1734		 26:m510 s1730	27:m506 s614		 
+	28:m506 s1734	29:m510 s610		 30:m510 s610	31:m506 s1734		 
+
+	32:m506
+	Extent=61102
+	Mark  min:498	 max:658
+	Space min:554	 max:1734

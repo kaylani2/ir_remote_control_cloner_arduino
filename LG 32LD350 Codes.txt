@@ -1,0 +1,61 @@
+Manufacturer: LG
+Model: 32LD350 		
+Protocol: NEC
+Number of bits: 32
+
+On Button:					0x20DF10EF
+
+Input/Source Button:		0x20DFD02F
+
++Volume:					0x20DF40BF
+-Volume:					0x20DFC03F
+
+Mute Button:				0x20DF906F
+
++Channel:					0x20DF00FF
+-Channel:					0x20DF807F
+
+Channel 1:					0x20DF8877
+Channel 2:					0x20DF48B7
+Channel 3:					0x20DFC837
+Channel 4:					0x20DF28D7
+Channel 5:					0x20DFA857
+Channel 6:					0x20DF6897
+Channel 7:					0x20DFE817
+Channel 8:					0x20DF18E7
+Channel 9:					0x20DF9867
+Channel 0:					0x20DF08F7
+
+Back/Return:				0x20DF14EB
+Exit:						0x20DFDA25
+
+Up Arrow:					0x20DF02FD
+Down Arrow:					0x20DF827D
+Left Arrow:					0x20DFE01F
+Right Arrow:				0x20DF609F
+
+Enter Button:				0x20DF22DD
+
+Previous Channel:			0x
+
+
+Enter Button:
+
+	Decoded NEC(1): Value:20DF22DD Adrs:0 (32 bits) 
+	Raw samples(68): Gap:62538
+	  Head: m9054  s4534
+	0:m530 s602	1:m530 s602		 2:m534 s1714	3:m530 s602		 
+	4:m526 s602	5:m534 s598		 6:m530 s602	7:m530 s602		 
+	8:m526 s1722	9:m526 s1722		 10:m534 s598	11:m534 s1714		 
+	12:m530 s1718	13:m538 s1710		 14:m538 s1714	15:m534 s1714		 
+
+	16:m534 s598	17:m526 s602		 18:m530 s1722	19:m534 s594		 
+	20:m534 s598	21:m534 s598		 22:m534 s1714	23:m534 s598		 
+	24:m534 s1714	25:m534 s1714		 26:m538 s594	27:m538 s1710		 
+	28:m534 s1718	29:m534 s1714		 30:m530 s598	31:m534 s1718		 
+
+	32:m530
+	Extent=68198
+	Mark  min:526	 max:538
+	Space min:594	 max:1722
+
