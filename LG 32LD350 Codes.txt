@@ -5,12 +5,12 @@ Number of bits: 32
 
 On Button:					0x20DF10EF
 
-Input/Source Button:		0x20DFD02F
+Input/Source Button:				0x20DFD02F
 
 +Volume:					0x20DF40BF
 -Volume:					0x20DFC03F
 
-Mute Button:				0x20DF906F
+Mute Button:					0x20DF906F
 
 +Channel:					0x20DF00FF
 -Channel:					0x20DF807F
@@ -26,17 +26,17 @@ Channel 8:					0x20DF18E7
 Channel 9:					0x20DF9867
 Channel 0:					0x20DF08F7
 
-Back/Return:				0x20DF14EB
+Back/Return:					0x20DF14EB
 Exit:						0x20DFDA25
 
 Up Arrow:					0x20DF02FD
 Down Arrow:					0x20DF827D
 Left Arrow:					0x20DFE01F
-Right Arrow:				0x20DF609F
+Right Arrow:					0x20DF609F
 
-Enter Button:				0x20DF22DD
+Enter Button:					0x20DF22DD
 
-Previous Channel:			0x
+Previous Channel:				0xAAAAAAAA
 
 
 Enter Button:
