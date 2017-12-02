@@ -1,4 +1,12 @@
 /*
+ * Update: 02/12/2017
+ * Author: Kaylani Bochie
+ * 
+ * LG Model 32LD350 implemented
+ * KEO900 implemented
+ */
+
+/*
  * Update: 24/11/2017
  * Author: Kaylani Bochie
  * 
@@ -14,7 +22,7 @@
  * Since the code is working properly with different protocols, I'll use this sketch to control multiple appliances.
  * Including:
  * Samsung TV - Model UN40H5100AG - NECX (7) Protocol
- * Samsung TV - Model BLABLABLABLA - NEC (1) Protocol
+ * LG TV - Model 32LD350 - NEC (1) Protocol
  * A generic Led Strip - Model ????????? - NEC (1) Protocol
  * 
  */
@@ -102,30 +110,39 @@
 #define FIFTH_PIN                                                     7
 /* FIFTH_PIN is the least significant bit (LSB) */
 
-#define ON_BUTTON_UN40H5100AG_STRING_UN40H5100AG                      "00000"
-#define SOURCE_BUTTON_UN40H5100AG_STRING_UN40H5100AG                  "00001"
-#define PLUS_VOLUME_STRING_UN40H5100AG                                "00010"
-#define MINUS_VOLUME_STRING_UN40H5100AG                               "00011"
-#define MUTE_BUTTON_UN40H5100AG_STRING_UN40H5100AG                    "00100"
-#define PLUS_CHANNEL_STRING_UN40H5100AG                               "00101"
-#define MINUS_CHANNEL_STRING_UN40H5100AG                              "00110"
-#define CHANNEL_1_STRING_UN40H5100AG                                  "00111"
-#define CHANNEL_2_STRING_UN40H5100AG                                  "01000"
-#define CHANNEL_3_STRING_UN40H5100AG                                  "01001"
-#define CHANNEL_4_STRING_UN40H5100AG                                  "01010"
-#define CHANNEL_5_STRING_UN40H5100AG                                  "01011"
-#define CHANNEL_6_STRING_UN40H5100AG                                  "01100"
-#define CHANNEL_7_STRING_UN40H5100AG                                  "01101"
-#define CHANNEL_8_STRING_UN40H5100AG                                  "01110"
-#define CHANNEL_9_STRING_UN40H5100AG                                  "01111"
-#define CHANNEL_0_STRING_UN40H5100AG                                  "10000"
-#define RETURN_BUTTON_UN40H5100AG_STRING_UN40H5100AG                  "10001"
-#define EXIT_BUTTON_UN40H5100AG_STRING_UN40H5100AG                    "10010"
+#define ON_BUTTON_STRING                                              "00000"
+#define SOURCE_BUTTON_STRING                                          "00001"
+#define PLUS_VOLUME_STRING                                            "00010"
+#define MINUS_VOLUME_STRING                                           "00011"
+#define MUTE_BUTTON_STRING                                            "00100"
+#define PLUS_CHANNEL_STRING                                           "00101"
+#define MINUS_CHANNEL_STRING                                          "00110"
+#define CHANNEL_1_STRING                                              "00111"
+#define CHANNEL_2_STRING                                              "01000"
+#define CHANNEL_3_STRING                                              "01001"
+#define CHANNEL_4_STRING                                              "01010"
+#define CHANNEL_5_STRING                                              "01011"
+#define CHANNEL_6_STRING                                              "01100"
+#define CHANNEL_7_STRING                                              "01101"
+#define CHANNEL_8_STRING                                              "01110"
+#define CHANNEL_9_STRING                                              "01111"
+#define CHANNEL_0_STRING                                              "10000"
+#define RETURN_BUTTON_STRING                                          "10001"
+#define EXIT_BUTTON_STRING                                            "10010"
+#define UP_ARROW_BUTTON_STRING                                        "10011"
+#define DOWN_ARROW_BUTTON_STRING                                      "10100"
+#define LEFT_ARROW_BUTTON_STRING                                      "10101"
+#define RIGHT_ARROW_BUTTON_STRING                                     "10110"
+#define ENTER_BUTTON_STRING                                           "10111"
+#define PREVIOUS_CHANNEL_BUTTON_STRING                                "11000"
+
 
 #define TEST_BUTTON_STRING                                            "11111"
 
-/* These are the codes used by my living room tv -> Samsung Model UN40H5100AG */
-/* Update: DO NOT USE STRINGS!!! The .send () method accepts the strings but doesn't work properly */
+/*
+ * Samsung Model UN40H5100AG
+ * Protocol used: NECX
+ */
 #define ON_BUTTON_UN40H5100AG                                         0xE0E040BF
 #define SOURCE_BUTTON_UN40H5100AG                                     0xE0E0807F
 #define PLUS_VOLUME_UN40H5100AG                                       0xE0E0E01F
@@ -145,10 +162,82 @@
 #define CHANNEL_0_UN40H5100AG                                         0xE0E08877
 #define RETURN_BUTTON_UN40H5100AG                                     0xE0E01AE5
 #define EXIT_BUTTON_UN40H5100AG                                       0xE0E0B44B
+#define UP_ARROW_BUTTON_UN40H5100AG                                   0xE0E006F9
+#define DOWN_ARROW_BUTTON_UN40H5100AG                                 0xE0E08679
+#define LEFT_ARROW_BUTTON_UN40H5100AG                                 0xE0E0A659
+#define RIGHT_ARROW_BUTTON_UN40H5100AG                                0xE0E046B9
+#define ENTER_BUTTON_UN40H5100AG                                      0xE0E016E9
+#define PREVIOUS_CHANNEL_BUTTON_UN40H5100AG                           0xE0E0C837
+
+
+/*
+ * LG Model 32LD350
+ * Protocol used: NEC
+ */
+#define ON_BUTTON_32LD350                                             0x20DF10EF
+#define SOURCE_BUTTON_32LD350                                         0x20DFD02F
+#define PLUS_VOLUME_32LD350                                           0x20DF40BF
+#define MINUS_VOLUME_32LD350                                          0x20DFC03F
+#define MUTE_BUTTON_32LD350                                           0x20DF906F
+#define PLUS_CHANNEL_32LD350                                          0x20DF00FF
+#define MINUS_CHANNEL_32LD350                                         0x20DF807F
+#define CHANNEL_1_32LD350                                             0x20DF8877
+#define CHANNEL_2_32LD350                                             0x20DF48B7
+#define CHANNEL_3_32LD350                                             0x20DFC837
+#define CHANNEL_4_32LD350                                             0x20DF28D7
+#define CHANNEL_5_32LD350                                             0x20DFA857
+#define CHANNEL_6_32LD350                                             0x20DF6897
+#define CHANNEL_7_32LD350                                             0x20DFE817
+#define CHANNEL_8_32LD350                                             0x20DF18E7
+#define CHANNEL_9_32LD350                                             0x20DF9867
+#define CHANNEL_0_32LD350                                             0x20DF08F7
+#define RETURN_BUTTON_32LD350                                         0x20DF14EB
+#define EXIT_BUTTON_32LD350                                           0x20DFDA25
+#define UP_ARROW_BUTTON_32LD350                                       0x20DF02FD
+#define DOWN_ARROW_BUTTON_32LD350                                     0x20DF827D
+#define LEFT_ARROW_BUTTON_32LD350                                     0x20DFE01F
+#define RIGHT_ARROW_BUTTON_32LD350                                    0x20DF609F
+#define ENTER_BUTTON_32LD350                                          0x20DF22DD
+#define PREVIOUS_CHANNEL_BUTTON_32LD350                               0xAAAAAAAA
+
+/*
+ * Keo Model KEO900 (Digital Converter)
+ * Protocol used: NEC
+ */
+#define ON_BUTTON_32LD350                                             0xFB009A65
+#define PLUS_VOLUME_32LD350                                           0xFB00D827
+#define MINUS_VOLUME_32LD350                                          0xFB005AA5
+#define MUTE_BUTTON_32LD350                                           0xFB009867
+#define PLUS_CHANNEL_32LD350                                          0xFB00609F
+#define MINUS_CHANNEL_32LD350                                         0xFB006897
+#define CHANNEL_1_32LD350                                             0xFB004AB5
+#define CHANNEL_2_32LD350                                             0xFB000AF5
+#define CHANNEL_3_32LD350                                             0xFB0008F7
+#define CHANNEL_4_32LD350                                             0xFB006A95
+#define CHANNEL_5_32LD350                                             0xFB002AD5
+#define CHANNEL_6_32LD350                                             0xFB0028D7
+#define CHANNEL_7_32LD350                                             0xFB00728D
+#define CHANNEL_8_32LD350                                             0xFB0032CD
+#define CHANNEL_9_32LD350                                             0xFB0030CF
+#define CHANNEL_0_32LD350                                             0xFB00F00F
+#define RETURN_BUTTON_32LD350                                         0xFB00C837
+#define EXIT_BUTTON_32LD350                                           0xFB00A05F
+#define UP_ARROW_BUTTON_32LD350                                       0xFB00609F
+#define DOWN_ARROW_BUTTON_32LD350                                     0xFB006897
+#define LEFT_ARROW_BUTTON_32LD350                                     0xFB00D827
+#define RIGHT_ARROW_BUTTON_32LD350                                    0xFB005AA5
+#define ENTER_BUTTON_32LD350                                          0xFB0058A7
+#define MEDIA_BUTTON_KEO900                                           0xFB0052AD
+#define USB_BUTTON_KEO900                                             0xFB0012ED
+#define AUDIO_BUTTON_KEO900                                           0xFB00D02F
+#define MENU_BUTTON_KEO900                                            0xFB00A25D
+
+
+/* NECX/NEC Protocols: */
+#define NUMBER_OF_BITS_NECX                                           32
+#define NUMBER_OF_BITS_NEC                                            32
 #define TEST_BUTTON                                                   0x89ABCDEF
 
-/* NECX Protocol: */
-#define NUMBER_OF_BITS_NECX                                           32
  
 //Create a receiver object to listen on pin RECEIVER_PIN
 IRrecvPCI myReceiver (RECEIVER_PIN);
@@ -156,14 +245,36 @@ IRrecvPCI myReceiver (RECEIVER_PIN);
 //Create a sender object
 IRsend mySender;
  
-//Create a decoder object 
+  //Create a decoder object 
 IRdecode myDecoder;   
+
+/*
+ * int BlinkBuitInLed ();
+ * 
+ * Return values:
+ * OK - The function was executed correctly.
+ * 
+ * Description:
+ * This function quickly blinks the buit in led for debuggin purposes.
+ */
+int BlinkBuiltInLed ()
+{
+  unsigned char index;
+
+  for (index = 0; index < 20; index++)
+  {
+    digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
+    delay (50);
+  }
+
+  return OK;
+}
 
 /*
  * int ConstructDipString (char *, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char);
  * 
  * Arguments:
- * char * - Reference of where this functions will save the corresponding read value (O)
+ * char * - Reference of where this function will save the corresponding read value (O)
  * unsigned char - Leftmost pin of the dip switch. It's the most significant bit (I)
  * unsigned char - Second pin from the left (I)
  * unsigned char - Third pin from the left (I)
@@ -172,9 +283,10 @@ IRdecode myDecoder;
  * 
  * Return values:
  * OK - The function was executed correctly.
+ * INVALID_DIP_STRING_ERROR - The first argument is a pointer set to NULL.
  * 
  * Description:
- * This functions reads the value of five given pins and outputs the corresponding value with its first argument.
+ * This function reads the value of five given pins and outputs the corresponding value with its first argument.
  * A high value (5V) corresponds to a 1 on the output string.
  * A low value (0V) corresponds to a 0 on the output string.
  * The function was written to be used with a 5 channel dip switch.
@@ -185,7 +297,10 @@ int ConstructDipString (char *dipString, unsigned char firstPin, unsigned char s
   /*  firstPin is the most significant bit    (MSB)
    *  fifthPin is the least significant bit   (LSB)
    */
-  
+
+  if (dipString == NULL)
+    return INVALID_DIP_STRING_ERROR;
+    
   strcpy (dipString, "");
   
   if (digitalRead (firstPin) == LOW)
@@ -220,7 +335,7 @@ int ConstructDipString (char *dipString, unsigned char firstPin, unsigned char s
  * int SendCode (const char *);
  * 
  * Arguments:
- * const char * - The string that we'll be used to select the code that will be sent by this function (I)
+ * const char * - The string that will be used to select the code that will be sent by this function (I)
  * 
  * Return values:
  * OK - The function was executed correctly.
@@ -230,143 +345,211 @@ int ConstructDipString (char *dipString, unsigned char firstPin, unsigned char s
  * Description:
  * This function receives a string that should contain a 5 bit code.
  * The function selects a IR code to be sent by comparing the input string with the macros defined previously.
- * If the argument is valid the function sends the corresponding IR code with the corresponding protocol.
+ * If the argument is valid the function sends the corresponding IR code with the corresponding protocol for the implemented appliances.
  * 
  */
 int SendCode (const char *dipString)
 {
   for (unsigned char index = 0; index < strlen (dipString); index++)
-    if ( (dipString [index] != 0) && (dipString [index] != 1) )
+    if ( (dipString [index] != '0') && (dipString [index] != '1') )
       return INVALID_DIP_STRING_ERROR;
   
-  if (strcmp (dipString, ON_BUTTON_UN40H5100AG_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, ON_BUTTON_STRING) == 0)
   {
     mySender.send (NECX, ON_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, ON_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, SOURCE_BUTTON_UN40H5100AG_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, SOURCE_BUTTON_STRING) == 0)
   {
     mySender.send (NECX, SOURCE_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, SOURCE_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
-  if (strcmp (dipString, PLUS_VOLUME_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, PLUS_VOLUME_STRING) == 0)
   {
     mySender.send (NECX, PLUS_VOLUME_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, PLUS_VOLUME_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, MINUS_VOLUME_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, MINUS_VOLUME_STRING) == 0)
   {
     mySender.send (NECX, MINUS_VOLUME_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, MINUS_VOLUME_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, MUTE_BUTTON_UN40H5100AG_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, MUTE_BUTTON_STRING) == 0)
   {
     mySender.send (NECX, MUTE_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, MUTE_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, PLUS_CHANNEL_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, PLUS_CHANNEL_STRING) == 0)
   {
     mySender.send (NECX, PLUS_CHANNEL_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, PLUS_CHANNEL_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, MINUS_CHANNEL_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, MINUS_CHANNEL_STRING) == 0)
   {
     mySender.send (NECX, MINUS_CHANNEL_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, MINUS_CHANNEL_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_1_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_1_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_1_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_1_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_2_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_2_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_2_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_2_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_3_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_3_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_3_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_3_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_4_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_4_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_4_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_4_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_5_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_5_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_5_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_5_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_6_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_6_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_6_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_6_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_7_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_7_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_7_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_7_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_8_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_8_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_8_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_8_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_9_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_9_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_9_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_9_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, CHANNEL_0_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, CHANNEL_0_STRING) == 0)
   {
     mySender.send (NECX, CHANNEL_0_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, CHANNEL_0_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));   
     return OK;
   }
 
-  if (strcmp (dipString, RETURN_BUTTON_UN40H5100AG_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, RETURN_BUTTON_STRING) == 0)
   {
     mySender.send (NECX, RETURN_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, RETURN_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
 
-  if (strcmp (dipString, EXIT_BUTTON_UN40H5100AG_STRING_UN40H5100AG) == 0)
+  if (strcmp (dipString, EXIT_BUTTON_STRING) == 0)
   {
     mySender.send (NECX, EXIT_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, EXIT_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
+    digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
+    return OK;
+  }
+
+  if (strcmp (dipString, UP_ARROW_BUTTON_STRING) == 0)
+  {
+    mySender.send (NECX, UP_ARROW_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, UP_ARROW_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
+    digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
+    return OK;
+  }
+
+
+  if (strcmp (dipString, DOWN_ARROW_BUTTON_STRING) == 0)
+  {
+    mySender.send (NECX, DOWN_ARROW_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, DOWN_ARROW_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
+    digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
+    return OK;
+  }
+
+  if (strcmp (dipString, LEFT_ARROW_BUTTON_STRING) == 0)
+  {
+    mySender.send (NECX, LEFT_ARROW_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, LEFT_ARROW_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
+    digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
+    return OK;
+  }
+
+  if (strcmp (dipString, RIGHT_ARROW_BUTTON_STRING) == 0)
+  {
+    mySender.send (NECX, RIGHT_ARROW_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, RIGHT_ARROW_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
+    digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
+    return OK;
+  }
+
+  if (strcmp (dipString, ENTER_BUTTON_STRING) == 0)
+  {
+    mySender.send (NECX, ENTER_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, ENTER_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
+    digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
+    return OK;
+  }
+
+  if (strcmp (dipString, PREVIOUS_CHANNEL_BUTTON_STRING) == 0)
+  {
+    mySender.send (NECX, PREVIOUS_CHANNEL_BUTTON_UN40H5100AG, NUMBER_OF_BITS_NECX);
+    mySender.send (NEC, PREVIOUS_CHANNEL_BUTTON_32LD350, NUMBER_OF_BITS_NEC);
     digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN));
     return OK;
   }
@@ -423,11 +606,13 @@ void loop()
 
   if (digitalRead (TRIGGER_PIN) == LOW)
   {
-    ConstructDipString (dipString, FIRST_PIN, SECOND_PIN, THIRD_PIN, FOURTH_PIN, FIFTH_PIN);
+    if (ConstructDipString (dipString, FIRST_PIN, SECOND_PIN, THIRD_PIN, FOURTH_PIN, FIFTH_PIN) != OK)
+      BlinkBuiltInLed ();
     Serial.print ("Sending: ");
     Serial.println (dipString);
-    SendCode (dipString);  
-    delay (501);
+    if (SendCode (dipString) != OK)
+      BlinkBuiltInLed ();  
+    delay (251);
   }
 
 
