@@ -1,0 +1,65 @@
+Disclaimer: 
+	I tested some buttons and all the codes were the same as the ones used by the LG 32LD350. So they're probably all the same, right?
+
+
+Manufacturer: LG
+Model: 42PQ30R
+Protocol: NEC
+Number of bits: 32
+
+On Button:					0x20DF10EF
+
+Input/Source Button:		0x20DFD02F
+
++Volume:					0x20DF40BF
+-Volume:					0x20DFC03F
+
+Mute Button:				0x20DF906F
+
++Channel:					0x20DF00FF
+-Channel:					0x20DF807F
+
+Channel 1:					0x20DF8877
+Channel 2:					0x20DF48B7
+Channel 3:					0x20DFC837
+Channel 4:					0x20DF28D7
+Channel 5:					0x20DFA857
+Channel 6:					0x20DF6897
+Channel 7:					0x20DFE817
+Channel 8:					0x20DF18E7
+Channel 9:					0x20DF9867
+Channel 0:					0x20DF08F7
+
+Back/Return:				0x20DF14EB
+Exit:						0x20DFDA25
+
+Up Arrow:					0x20DF02FD
+Down Arrow:					0x20DF827D
+Left Arrow:					0x20DFE01F
+Right Arrow:				0x20DF609F
+
+Enter Button:				0x20DF22DD
+
+Previous Channel:			0x
+
+
+Enter Button:
+
+	Decoded NEC(1): Value:20DF22DD Adrs:0 (32 bits) 
+	Raw samples(68): Gap:45266
+	  Head: m9042  s4546
+	0:m514 s606	1:m510 s614		 2:m506 s1734	3:m510 s614		 
+	4:m510 s610	5:m506 s618		 6:m510 s610	7:m510 s610		 
+	8:m510 s1734	9:m506 s1738		 10:m510 s610	11:m502 s1742		 
+	12:m510 s1734	13:m506 s1738		 14:m510 s1730	15:m510 s1734		 
+
+	16:m514 s610	17:m510 s610		 18:m510 s1734	19:m510 s610		 
+	20:m510 s614	21:m506 s614		 22:m514 s1730	23:m510 s610		 
+	24:m514 s1730	25:m510 s1734		 26:m510 s610	27:m514 s1730		 
+	28:m510 s1734	29:m510 s1734		 30:m510 s610	31:m514 s1730		 
+
+	32:m510
+	Extent=67934
+	Mark  min:502	 max:514
+	Space min:606	 max:1742
+
